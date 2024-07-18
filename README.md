@@ -28,6 +28,13 @@ This Bash script automates the process of creating backups of a specified direct
 -   **zip**: The `zip` utility is required for creating compressed backups.
 - **basename**: This package is required to fix the upload/deletion path of s3
 
+## 🪜 Steps to Deploy the Script on Server:
+
+ 1. Create a user on server and give him read access to the the source directory and read-write access to the destination directory (the dir where the backup will be stored)
+ 2. (Optional step) Create a IAM user with appropriate access to s3 only, then configer awscli on the server with the IAM user you created for a3 acccess.
+ 3. Create a cronjob on the server to run the backup script periodically as per your preference (create this cronjob when you are logged in with the user you created for backup)
+ 4. Give valid arguments to the script while creating cronjob, aslo add link of your s3 bucket in the 3rd argument if you want to upload backup to s3 as well. 
+
 ## 📜 Script Details
 
 1.  **🔍 Argument Validation**:
